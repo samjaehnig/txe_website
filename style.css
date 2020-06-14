@@ -1,10 +1,11 @@
 html {
   margin: 0 auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
   margin: 0;
+  font-family: 'Pathway Gothic One', sans-serif;
+
 }
 
 nav {
@@ -21,21 +22,26 @@ nav {
 }
 
 button {
-  margin: 5px 15px;
+  margin: 15px 5px;
   background: transparent;
   color: white;
-  font-size: 20px;
+  font-size: 25px;
   border: none;
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
+  font-family: 'Pathway Gothic One', sans-serif;
 }
 
 button:focus {
   border: none;
+  outline: none;
+
 }
 
 button:hover {
-  background-color: ;
-  color: #4C6085;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #3E9B9C;
 }
 
 #lastbutton {
@@ -43,5 +49,7 @@ button:hover {
 }
 
 #slideshow {
-  background: green;
+  background-color: #9bd2aa;
+  color: white;
+  text-align: center;
 }
