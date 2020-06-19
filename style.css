@@ -5,36 +5,43 @@ html {
 body {
   margin: 0;
   font-family: 'Pathway Gothic One', sans-serif;
-
 }
 
-nav {
+.header {
   display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  background: #0B5351;
-  margin: 0;
-  padding: 5px;
+  background-color: #0B5351;
+  justify-content: space-between;
 }
 
-#logo {
+#title {
+  display: flex;
+  margin-left: 15px;
+}
 
+#acronym {
+  font-size: 75px;
+  color: white;
+}
+
+#full_title {
+  color: white;
+  font-size: 20px;
+  padding: 10px;
 }
 
 button {
-  margin: 15px 5px;
   background: transparent;
   color: white;
   font-size: 25px;
   border: none;
   transition-duration: 0.3s;
   font-family: 'Pathway Gothic One', sans-serif;
+  vertical-align: middle;
 }
 
 button:focus {
   border: none;
   outline: none;
-
 }
 
 button:hover {
@@ -44,12 +51,10 @@ button:hover {
   color: #3E9B9C;
 }
 
-#lastbutton {
-  margin-right: 20px;
+#navbuttons {
+  padding: 25px;
 }
 
-#slideshow {
-  background-color: #9bd2aa;
-  color: white;
-  text-align: center;
+footer {
+  background-color: #0B5351;
 }
