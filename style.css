@@ -5,12 +5,16 @@ html {
 body {
   margin: 0;
   font-family: 'Pathway Gothic One', sans-serif;
+  margin-top: 120px;
 }
 
 .header {
   display: flex;
   background-color: #0B5351;
   justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 #title {
@@ -37,6 +41,8 @@ button {
   transition-duration: 0.3s;
   font-family: 'Pathway Gothic One', sans-serif;
   vertical-align: middle;
+  margin: 0px;
+  padding: 5px;
 }
 
 button:focus {
@@ -52,7 +58,51 @@ button:hover {
 }
 
 #navbuttons {
-  padding: 25px;
+  padding: 25px 0px;
+  margin-right: 2%;
+}
+
+.FAQ {
+  margin: 30px;
+}
+
+#faqtitle {
+  font-size: 30px;
+  text-align: center;
+}
+
+.QandA {
+  margin: 10px 0px;
+  padding: 15px 15px;
+  background-color: #AFC7C6;
+  border-radius: 15px;
+}
+
+.QandA:hover {
+  box-shadow: 3px 3px #dddddd;
+  cursor: pointer;
+}
+
+.question {
+  font-size: 20px;
+  color: #0B5351;
+}
+
+.answer {
+  font-size: 17px;
+  line-height: 25px;
+  margin: 10px;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  display: none;
+  font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+a {
+  color: #0B5351;
 }
 
 footer {
