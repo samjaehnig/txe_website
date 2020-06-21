@@ -1,11 +1,12 @@
 html {
-  margin: 0 auto;
+  margin: 0 auto
 }
 
 body {
   margin: 0;
   font-family: 'Pathway Gothic One', sans-serif;
   margin-top: 120px;
+  background-color: #eeeeee;
 }
 
 .header {
@@ -20,6 +21,8 @@ body {
 #title {
   display: flex;
   margin-left: 15px;
+  cursor: pointer;
+  transition-duration: 0.3s;
 }
 
 #acronym {
@@ -66,9 +69,10 @@ button:hover {
   margin: 30px;
 }
 
-#faqtitle {
+#faqtitle, #memberstitle {
   font-size: 30px;
   text-align: center;
+  color: #0B5351;
 }
 
 .QandA {
@@ -98,7 +102,39 @@ button:hover {
   border-radius: 5px;
   display: none;
   font-family: 'Source Sans Pro', sans-serif;
+}
 
+.members {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.member {
+  margin: 30px;
+  margin-top: 0px;
+  border-radius: 20px;
+  background-color: #AFC7C6;
+  width: 300px;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 5px;
+  padding: 0px 25px;
+  height: 300px;
+  animation: fade-in ease 3s;
+}
+
+@keyframes fade-in {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+#name {
+    font-size: 25px;
+    color: #0B5351;
+}
+#blurb {
+  line-height: 21px;
 }
 
 a {
