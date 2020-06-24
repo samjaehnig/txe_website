@@ -16,6 +16,7 @@ body {
   position: fixed;
   width: 100%;
   top: 0;
+  z-index: 1;
 }
 
 #title {
@@ -27,18 +28,18 @@ body {
 
 #acronym {
   font-size: 75px;
-  color: white;
+  color: #eeeeee;
 }
 
 #full_title {
-  color: white;
+  color: #eeeeee;
   font-size: 20px;
   padding: 10px;
 }
 
 button {
   background: transparent;
-  color: white;
+  color: #eeeeee;
   font-size: 25px;
   border: none;
   transition-duration: 0.3s;
@@ -69,7 +70,7 @@ button:hover {
   margin: 30px;
 }
 
-#faqtitle, #memberstitle {
+#faqtitle, #memberstitle, #welcometitle {
   font-size: 30px;
   text-align: center;
   color: #0B5351;
@@ -98,19 +99,20 @@ button:hover {
   margin: 10px;
   margin-top: 15px;
   padding: 10px;
-  background-color: white;
+  background-color: #eeeeee;
   border-radius: 5px;
   display: none;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.members {
+.leadership, .active_members {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.member {
+
+.member, .active_member {
   margin: 30px;
   margin-top: 0px;
   border-radius: 20px;
@@ -120,8 +122,13 @@ button:hover {
   font-family: 'Source Sans Pro', sans-serif;
   line-height: 5px;
   padding: 0px 25px;
-  height: 300px;
+  height: 400px;
   animation: fade-in ease 3s;
+}
+
+.active_member {
+  height: 300px;
+
 }
 
 @keyframes fade-in {
@@ -135,6 +142,10 @@ button:hover {
 }
 #blurb {
   line-height: 21px;
+}
+
+#profile_picture_sam {
+  width: 250px;
 }
 
 a {
