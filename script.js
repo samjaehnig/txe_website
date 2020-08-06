@@ -1,8 +1,16 @@
-
-function switchAnswer(qnumber) {
-  if(document.getElementById(qnumber).style.display == "block") {
-    document.getElementById(qnumber).style.display = "none";
+function switchAnswer(qname) {
+  if(document.getElementById(qname).style.display == "block") {
+    document.getElementById(qname).style.display = "none";
   } else {
-    document.getElementById(qnumber).style.display = "block";
+    document.getElementById(qname).style.display = "block";
   }
 }
+
+
+$(document).ready(function(){
+
+  $.localScroll({
+      offset: { top: -100 }
+  });    
+
+});

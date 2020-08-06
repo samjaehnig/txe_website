@@ -1,91 +1,172 @@
-html {
-  margin: 0 auto
+body {
+  margin: 100px 0px;
+  background-color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+  font-size: 18px;
 }
 
-body {
-  margin: 0;
-  font-family: 'Roboto Condensed', sans-serif;
-  margin-top: 120px;
-  background-color: #ffffff;
-}
 
 
 .header {
   display: flex;
-  background-color: #0B5351;
+  background-color: #00274C;
   justify-content: space-between;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1;
+  height: 100px;
 }
 
 #title {
-  display: flex;
-  margin-left: 15px;
-  cursor: pointer;
-}
-
-#acronym {
+  padding: 12.5px 0px 12.5px 20px;
+  line-height: 75px;
   font-size: 75px;
   color: #ffffff;
   font-family: 'Pathway Gothic One', sans-serif;
-
+  text-decoration: none;
 }
 
-#full_title {
-  color: #ffffff;
-  font-size: 17px;
-  padding: 16px 10px;
+#title:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }
 
-button {
+#button {
+  text-decoration: none;
   background: transparent;
   color: #ffffff;
-  font-size: 21px;
+  font-size: 22px;
+  line-height: 22px;
   border: none;
   transition-duration: 0.3s;
-  font-family: 'Roboto Condensed', sans-serif;
-
-  vertical-align: middle;
-  margin: 0px;
-  padding: 8px 5px;
+  margin: 0px 5px;
 }
 
-button:focus {
-  border: none;
-  outline: none;
-}
-
-button:hover {
+#button:hover {
   border: none;
   outline: none;
   cursor: pointer;
-  color: #AFC7C6;
+  opacity: 0.6;
+}
+
+#button:focus {
+  border: none;
+  outline: none;
 }
 
 #navbuttons {
-  padding: 25px 0px;
-  margin-right: 2%;
+  margin: 39px 20px 39px 0px;
 }
 
-.FAQ {
-  margin: 30px;
+#disclaimer {
+  background-color: #eeeeee;
+  padding: 7px;
 }
 
-#faqtitle, #memberstitle, #welcometitle {
+.intro {
+  background-color: #D6EBFF;
+  color: #00274C;
+  padding: 30vh 10px;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+#intro_title {
+  font-size: calc(18vh - 30px);
+  margin: 0px 0px 25px 0px;
+  font-family: 'Pathway Gothic One', sans-serif;
+}
+
+#section_title {
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 50px;
+  color: #00274C;
+  margin: 0px;
+}
+
+.about {
+  padding: 125px 50px;
+}
+
+#about_paragraph {
+  font-size: 21px;
+  text-align: left;
+  margin: 40px 0px 75px 0px;
+}
+
+.apply_button {
   font-size: 25px;
-  line-height: normal;
-  text-align: center;
-  color: #0B5351;
+  text-decoration: none;
+  background-color: #00274C;
+  color: #ffffff;
+  border-radius: 10px;
+  height: 45px;
+  padding: 10px;
+}
 
+.apply_button:hover {
+  opacity: 0.8;
+}
+
+.member {
+  margin: 40px;
+  border-radius: 20px;
+  background-color: white;
+  padding: 20px calc(2.5vh);
+}
+
+.leadership {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#profile_picture {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.members {
+  padding: 40px 50px;
+  background-color: #D6EBFF;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+#name {
+  font-size: 30px;
+  line-height: 30px;
+  color: #00274C;
+  margin: 0px;
+}
+
+.faq {
+  margin: 100px auto 150px auto;
+  width: 85vw;
+}
+
+.questions {
+  margin-top: 40px;
+}
+
+.answer {
+  line-height: 25px;
+  margin: 15px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: none;
 }
 
 .QandA {
-  margin: 10px 0px;
-  padding: 15px 15px;
+  margin: 15px 0px;
+  padding: 20px 20px;
   background-color: #eeeeee;
   border-radius: 15px;
+  text-align: left;
 }
 
 .QandA:hover {
@@ -94,75 +175,10 @@ button:hover {
 }
 
 .question {
-  font-size: 20px;
-  color: #0B5351;
-}
-
-.answer {
-  font-size: 17px;
-  line-height: 25px;
-  margin: 10px;
-  margin-top: 15px;
-  padding: 10px;
-  background-color: #ffffff;
-  border-radius: 5px;
-  display: none;
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-.leadership, .active_members {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-
-.member, .active_member {
-  margin: 30px;
-  margin-top: 0px;
-  border-radius: 20px;
-  background-color: #eeeeee;
-  width: 300px;
-  text-align: center;
-  font-family: 'Source Sans Pro', sans-serif;
-  padding: 5px 25px;
-  height: 400px;
-  animation: fade-in ease 2s;
-  box-shadow: 3px 3px #dddddd;
-
-}
-
-.active_member {
-  height: 250px;
-  width: 200px;
-  margin: 20px;
-  margin-top: 0px;
-}
-
-
-
-@keyframes fade-in {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
-
-#name {
-    font-size: 25px;
-    color: #0B5351;
-    line-height: 10px;
-    margin-bottom: 0px;
-    padding: 0px;
-}
-
-#profile_picture_sam {
-  width: 250px;
-  border-radius: 10px;
+  font-size: 21px;
+  color: #00274C;
 }
 
 a {
-  color: #0B5351;
-}
-
-footer {
-  background-color: #0B5351;
+  color: #00274C;
 }
