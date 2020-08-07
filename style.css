@@ -111,10 +111,11 @@ body {
 }
 
 .member {
-  margin: 40px;
+  margin: 40px 5px;
   border-radius: 20px;
   background-color: white;
-  padding: 20px calc(2.5vh);
+  padding: 10px calc(1.5vh);
+  width: 200px
 }
 
 .leadership {
@@ -124,10 +125,15 @@ body {
 }
 
 #profile_picture {
-  width: 300px;
-  height: 200px;
+  width: 204px;
+  height: 136px;
   border-radius: 10px;
 }
+/* 
+#profile_picture:hover {
+  opacity: 0.6;
+  cursor: pointer;
+} */
 
 .members {
   padding: 40px 50px;
@@ -137,7 +143,7 @@ body {
 }
 
 #name {
-  font-size: 30px;
+  font-size: 27px;
   line-height: 30px;
   color: #00274C;
   margin: 0px;
