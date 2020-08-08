@@ -148,8 +148,9 @@ body {
 }
 
 .FAQ {
-  padding: 100px auto 150px auto;
+  padding: 100px 0px 150px 0px;
   width: 85vw;
+  margin: auto;
 }
 
 .questions {
