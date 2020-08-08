@@ -114,29 +114,24 @@ body {
   margin: 40px 5px;
   border-radius: 20px;
   background-color: white;
-  padding: 10px calc(1.5vh);
-  width: 200px
+  padding: 15px 5px 5px 5px;
+  width: 202px
 }
 
 .leadership {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 #profile_picture {
-  width: 204px;
-  height: 136px;
+  width: 192px;
+  height: 128px;
   border-radius: 10px;
 }
-/* 
-#profile_picture:hover {
-  opacity: 0.6;
-  cursor: pointer;
-} */
 
 .members {
-  padding: 40px 50px;
+  padding: 40px 30px;
   background-color: #D6EBFF;
   border-radius: 20px;
   margin: 10px;
@@ -144,9 +139,14 @@ body {
 
 #name {
   font-size: 27px;
-  line-height: 30px;
+  line-height: 27px;
   color: #00274C;
   margin: 0px;
+}
+
+#position, #info {
+  font-size: 15px;
+  line-height: 18px;
 }
 
 .faq {
