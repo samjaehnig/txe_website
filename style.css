@@ -148,13 +148,14 @@ body {
 }
 
 .FAQ {
-  padding: 100px 0px 150px 0px;
+  padding: 60px 0px 150px 0px;
   width: 85vw;
   margin: auto;
+  margin-top: 40px;
 }
 
 .questions {
-  margin-top: 40px;
+  margin-top: 6;
 }
 
 .answer {
