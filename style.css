@@ -66,13 +66,14 @@ body {
 .intro {
   background-color: #D6EBFF;
   color: #00274C;
-  padding: 30vh 10px;
+  padding: 27vh 10px;
   margin: 10px;
   border-radius: 20px;
 }
 
 #intro_title {
-  font-size: calc(18vh - 30px);
+
+  font-size: calc(16vh + 15px);
   margin: 0px 0px 25px 0px;
   font-family: 'Pathway Gothic One', sans-serif;
 }
