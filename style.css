@@ -123,10 +123,30 @@ body {
   flex-wrap: wrap;
 }
 
-#profile_picture {
+.profile_picture {
   width: 192px;
   height: 128px;
   border-radius: 10px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.profile_picture:hover {
+  opacity: 0.2;
+}
+
+.email{
+  position: absolute;
+  top: 45px;
+  left: 87px;
+  display: none;
+}
+
+#profile_image_links {
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 .members {
