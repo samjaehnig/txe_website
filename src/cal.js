@@ -9,12 +9,12 @@ const app = express();
 const router = express.Router();
 
 router.get("/", function(req, response) {
-  var credentials = process.env.CREDENTIALS;
+  var credentials = {"installed": {"client_id": process.env.CLIENT_ID, "project_id": process.env.PROJECT_ID, "auth_uri": "https://accounts.google.com/o/oauth2/auth", "token_uri": "https://oauth2.googleapis.com/token", "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs", "client_secret": process.env.CLIENT_SECRET, "redirect_uris": ["http://localhost"]}};
   const {client_secret, client_id, redirect_uris} = credentials.installed;
   const oAuth2Client = new google.auth.OAuth2(
       client_id, client_secret, redirect_uris[0]);
         
-  var token = process.env.TOKEN;
+  var token = {'access_token': process.env.ACCESS_TOKEN, 'refresh_token': process.env.REFRESH_TOKEN, 'scope': "https://www.googleapis.com/auth/calendar.readonly", 'token_type': "Bearer", 'expiry_date': "1598106183938"};
   oAuth2Client.setCredentials(token);
   listEvents(oAuth2Client);
   
