@@ -208,7 +208,7 @@ body {
 .event_time {
   color: #000000;
   font-size: 18px;
-  margin: 5px;
+  margin: 5px 0px 15px 0px;
 }
 
 .event_date {

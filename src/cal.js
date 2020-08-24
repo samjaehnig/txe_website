@@ -53,7 +53,7 @@ router.get("/", function(req, response) {
               var date_arr = event.start.date.split('-');
               var year = date_arr[0], month = (date_arr[1]), day = date_arr[2];
               date = months[--month] + " " + day + ", " + year;
-              time = "";
+              time = " ";
             }
             event_json[index] = {"title": event.summary, "date": date, "time": time, "location": (event.location || "n/a")};
             index++;

@@ -169,6 +169,7 @@
               location_icon.setAttribute("src", "icons/location.svg");
               location_link.appendChild(location_icon);
               location_link.setAttribute("href", body[i]["location"]);
+              location_link.setAttribute("target", "_blank");
               event.appendChild(location_link);
             }
             event_list.appendChild(event);
