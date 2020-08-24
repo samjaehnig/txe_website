@@ -145,6 +145,8 @@
         request.open("GET",  "/cal",  true);
         request.send();
         request.onload  =  function()  {
+          console.log(request);
+          console.log(rewuest.responseText);
           var body = JSON.parse(request.responseText);
           var event_list = document.getElementById("event_list");
           for(var i = 0; i < Object.keys(body).length; i++) {
