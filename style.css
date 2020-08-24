@@ -222,6 +222,10 @@ body {
   margin: 20px 5px 10px 5px;
 }
 
+.event_location:hover {
+  opacity: 0.6;
+}
+
 .FAQ {
   padding: 60px 0px 150px 0px;
   width: 85vw;
