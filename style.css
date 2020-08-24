@@ -178,7 +178,7 @@ body {
 }
 
 .events {
-  padding: 125px 25px;
+  padding: 125px 25px 75px 25px;
 }
 
 #event_list {
@@ -209,6 +209,7 @@ body {
   color: #000000;
   font-size: 18px;
   margin: 5px 0px 15px 0px;
+  line-height: 23px;
 }
 
 .event_date {
