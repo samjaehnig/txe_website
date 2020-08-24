@@ -2,43 +2,30 @@ const express = require('express');
 const fs = require('fs');
 const {google} = require('googleapis');
 const serverless = require('serverless-http');
-const cal_id = process.env.CAL_ID;
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 const app = express();
 
 const router = express.Router();
 
-// app.get("/", function(req, response) {
-//   response.sendFile(__dirname + "/index.html");
-// });
-
-// app.get('/style.css', function(req, res) {
-//   res.sendFile(__dirname + "/style.css");
-// });
-
-
 router.get("/", function(req, response) {
-  fs.readFile('credentials.json', (err, content) => {
-    credentials = JSON.parse(content);
-    const {client_secret, client_id, redirect_uris} = credentials.installed;
-    const oAuth2Client = new google.auth.OAuth2(
-        client_id, client_secret, redirect_uris[0]);
-  
-    fs.readFile('token.json', (err, token) => {
-      oAuth2Client.setCredentials(JSON.parse(token));
-      listEvents(oAuth2Client);
-    });
-  });
+  var credentials = process.env.CREDENTIALS;
+  const {client_secret, client_id, redirect_uris} = credentials.installed;
+  const oAuth2Client = new google.auth.OAuth2(
+      client_id, client_secret, redirect_uris[0]);
+        
+  var token = process.env.TOKEN;
+  oAuth2Client.setCredentials(token);
+  listEvents(oAuth2Client);
   
   function listEvents(auth) {
     const calendar = google.calendar({version: 'v3', auth});
-    calendar.events.list({ calendarId: cal_id, timeMin: (new Date()).toISOString(), maxResults: 6,
+    calendar.events.list({ calendarId: process.env.CAL_ID, timeMin: (new Date()).toISOString(), maxResults: 6,
       singleEvents: true, orderBy: 'startTime'}, (err, res) => {
+        console.log(err);
         var events = res.data.items, event_json = {}, index = 0;
         events.map((event, i) => {
             var time = "";
-            
             if(event.start.dateTime) { //need to include exact times
               start_time = event.start.dateTime;
               start_am = "AM";
