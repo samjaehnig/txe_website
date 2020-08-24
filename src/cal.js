@@ -1,5 +1,4 @@
 const express = require('express');
-const fs = require('fs');
 const {google} = require('googleapis');
 const serverless = require('serverless-http');
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -9,14 +8,12 @@ const app = express();
 const router = express.Router();
 
 router.get("/", function(req, response) {
-  // var credentials = {"installed": {"client_id": process.env.CLIENT_ID, "project_id": process.env.PROJECT_ID, "auth_uri": "https://accounts.google.com/o/oauth2/auth", "token_uri": "https://oauth2.googleapis.com/token", "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs", "client_secret": process.env.CLIENT_SECRET, "redirect_uris": ["http://localhost"]}};
-  var credentials = {"installed":{"client_id":"642564120783-iv7738procvhqt33q7r8hro71u0kke0f.apps.googleusercontent.com","project_id":"txe-cal-integrat-1598026610864","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"0NJVtAireBCHOKn0_KOhi5BH","redirect_uris":["urn:ietf:wg:oauth:2.0:oob","http://localhost"]}};
+  var credentials = {"installed": {"client_id": process.env.CLIENT_ID, "project_id": process.env.PROJECT_ID, "auth_uri": "https://accounts.google.com/o/oauth2/auth", "token_uri": "https://oauth2.googleapis.com/token", "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs", "client_secret": process.env.CLIENT_SECRET, "redirect_uris": ["http://localhost"]}};
   const {client_secret, client_id, redirect_uris} = credentials.installed;
   const oAuth2Client = new google.auth.OAuth2(
       client_id, client_secret, redirect_uris[0]);
         
-  var token = {"access_token":"ya29.a0AfH6SMD6C_eL-PpUePWqo60Bhd0njeqDd1tLZJ2N2wXOYbmGgq5Sx3EeH6UKxEnWU1FijRLZqpxFR6W8ILlTp-HcKTEx2SIuzNR5DyNmghpIp2zlvqjFPkG-Xjhkcgidvyix8ng0_v1Kf7bGpKnoi4SIa2Rz2VqRPxc","refresh_token":"1//0f756kCJdnfirCgYIARAAGA8SNwF-L9IriatY40s6EARbA-UBBxReTleezLFvjB2Xmtljw_Bmc31KCbxnIp0w3-LBfLA370c_qrM","scope":"https://www.googleapis.com/auth/calendar.readonly","token_type":"Bearer","expiry_date":1598106183938};
-  // var token = {'access_token': process.env.ACCESS_TOKEN, 'refresh_token': process.env.REFRESH_TOKEN, 'scope': "https://www.googleapis.com/auth/calendar.readonly", 'token_type': "Bearer", 'expiry_date': "1598106183938"};
+  var token = {'access_token': process.env.ACCESS_TOKEN, 'refresh_token': process.env.REFRESH_TOKEN, 'scope': "https://www.googleapis.com/auth/calendar.readonly", 'token_type': "Bearer", 'expiry_date': "1598106183938"};
   oAuth2Client.setCredentials(token);
   listEvents(oAuth2Client);
   
@@ -24,7 +21,6 @@ router.get("/", function(req, response) {
     const calendar = google.calendar({version: 'v3', auth});
     calendar.events.list({ calendarId: process.env.CAL_ID, timeMin: (new Date()).toISOString(), maxResults: 6,
       singleEvents: true, orderBy: 'startTime'}, (err, res) => {
-        console.log(err);
         var events = res.data.items, event_json = {}, index = 0;
         events.map((event, i) => {
             var time = "";
@@ -62,13 +58,10 @@ router.get("/", function(req, response) {
             event_json[index] = {"title": event.summary, "date": date, "time": time, "location": (event.location || "n/a")};
             index++;
         });
-        console.log(event_json);
         response.json(event_json);
     });
   }
 });
-
-// app.listen(8888);
 
 app.use("/.netlify/functions/cal", router);
 module.exports.handler = serverless(app);

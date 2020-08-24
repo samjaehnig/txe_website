@@ -136,13 +136,13 @@
         </div>
       </div>
     </div>
-<!-- 
+
     <div class="events" id="events">
       <p id="section_title">UPCOMING EVENTS</p>
       <div id="event_list"></div>
       <script>
         var request = new XMLHttpRequest();
-        request.open("GET",  "/cal",  true);
+        request.open("GET",  "/.netlify/functions/cal",  true);
         request.send();
         request.onload  =  function()  {
           var body = JSON.parse(request.responseText);
@@ -163,7 +163,7 @@
             event.appendChild(date);
             event.appendChild(time);
             if(body[i]["location"] != "n/a") {
-              location_link = document.createElement("div");
+              location_link = document.createElement("a");
               location_link.className = "event_location";
               location_icon = document.createElement("img");
               location_icon.setAttribute("src", "icons/location.svg");
@@ -175,7 +175,7 @@
           }
         }
       </script>
-    </div> -->
+    </div>
 
     <div class="FAQ" id="FAQ">
       <p id="section_title">FREQUENTLY ASKED QUESTIONS</p>
