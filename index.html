@@ -137,7 +137,7 @@
       </div>
     </div>
 
-    <div class="events" id="events">
+    <!-- <div class="events" id="events">
       <p id="section_title">UPCOMING EVENTS</p>
       <div id="event_list"></div>
       <script>
@@ -145,8 +145,6 @@
         request.open("GET",  "/cal",  true);
         request.send();
         request.onload  =  function()  {
-          console.log(request);
-          console.log(rewuest.responseText);
           var body = JSON.parse(request.responseText);
           var event_list = document.getElementById("event_list");
           for(var i = 0; i < Object.keys(body).length; i++) {
@@ -177,7 +175,7 @@
           }
         }
       </script>
-    </div>
+    </div> -->
 
     <div class="FAQ" id="FAQ">
       <p id="section_title">FREQUENTLY ASKED QUESTIONS</p>
