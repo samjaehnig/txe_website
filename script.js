@@ -6,24 +6,20 @@ function switchAnswer(qname) {
   }
 }
 
-
 $(document).ready(function(){
-
   $.localScroll({
       offset: { top: -100 }
   });    
-
 });
 
-
-function email_hover(name) {
+function hover(name) {
   document.getElementById("profile_picture_" + name).style.opacity = 0.2;
   document.getElementById("email_" + name).style.display = "block";
-  // document.getElementById("").style.display = "visible";
+  document.getElementById("linkedin_" + name).style.display = "block";
 }
 
-function email_off_hover(name) {
+function off_hover(name) {
   document.getElementById("email_" + name).style.display = "none";
+  document.getElementById("linkedin_" + name).style.display = "none";
   document.getElementById("profile_picture_" + name).style.opacity = 1.0;
-  // document.getElementById("").style.display = "visible";
 }

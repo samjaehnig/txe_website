@@ -136,17 +136,26 @@ body {
   opacity: 0.2;
 }
 
-.email{
+.email {
   position: absolute;
   top: 45px;
-  left: 87px;
+  left: 65px;
   display: none;
+}
+
+.linkedin {
+  position: absolute;
+  top: 45px;
+  left: 105px;
+  display: none;
+}
+
+.email:hover, .linkedin:hover {
+  opacity: 0.6;
 }
 
 #profile_image_links {
   position: relative;
-  top: 0;
-  left: 0;
 }
 
 .members {
@@ -168,6 +177,50 @@ body {
   line-height: 18px;
 }
 
+.events {
+  padding: 125px 25px;
+}
+
+#event_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.event {
+  background-color: #D6EBFF;
+  width: 375px;
+  border-radius: 20px;
+  height: 150px;
+  padding: 20px 10px;
+  margin: 40px 10px;
+  box-shadow: 3px 3px #eeeeee;
+
+}
+
+.event_title {
+  color: #00274C;
+  font-size: 25px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.event_time {
+  color: #000000;
+  font-size: 18px;
+  margin: 5px;
+}
+
+.event_date {
+  color: #000000;
+  font-size: 23px;
+  margin: 5px;
+}
+
+.event_location {
+  margin: 20px 5px 10px 5px;
+}
+
 .FAQ {
   padding: 60px 0px 150px 0px;
   width: 85vw;
@@ -176,7 +229,7 @@ body {
 }
 
 .questions {
-  margin-top: 6;
+  margin-top: 6px;
 }
 
 .answer {
