@@ -24,6 +24,7 @@ router.get("/", function(req, response) {
         var events = res.data.items, event_json = {}, index = 0;
         events.map((event, i) => {
           if(!event.recurringEventId) {
+            
             var time = "";
             if(event.start.dateTime) { //need to include exact times
               start_time = event.start.dateTime;
