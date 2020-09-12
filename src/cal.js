@@ -19,7 +19,7 @@ router.get("/", function(req, response) {
   
   function listEvents(auth) {
     const calendar = google.calendar({version: 'v3', auth});
-    calendar.events.list({ calendarId: process.env.CAL_ID, timeMin: (new Date()).toISOString(), maxResults: 6,
+    calendar.events.list({ calendarId: process.env.CAL_ID, timeMin: (new Date()).toISOString(), maxResults: 3,
       singleEvents: true, orderBy: 'startTime'}, (err, res) => {
         var events = res.data.items, event_json = {}, index = 0;
         events.map((event, i) => {
