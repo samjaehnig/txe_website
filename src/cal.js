@@ -22,9 +22,7 @@ router.get("/", function(req, response) {
     calendar.events.list({ calendarId: process.env.CAL_ID, timeMin: (new Date()).toISOString(), maxResults: 3,
       singleEvents: true, orderBy: 'startTime'}, (err, res) => {
         var events = res.data.items, event_json = {}, index = 0;
-        events.map((event, i) => {
-          if(!event.recurringEventId) {
-            
+        events.map((event, i) => {            //
             var time = "";
             if(event.start.dateTime) { //need to include exact times
               start_time = event.start.dateTime;
@@ -59,7 +57,6 @@ router.get("/", function(req, response) {
             }
             event_json[index] = {"title": event.summary, "date": date, "time": time, "location": (event.location || "n/a")};
             index++;
-          }
         });
         response.json(event_json);
     });
